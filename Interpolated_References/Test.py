@@ -14,15 +14,7 @@ intensity = data[:, 1]
 wn = data2[:, 0]
 inten = data2[:, 1]
 
-# Calculate Gaussian
-mean = np.mean(wavenumbers)
-print(mean)
-fwhm = 7
-sigma = fwhm/2.35
-top = (wavenumbers-mean)**2
-gaussian = np.exp(-(top)/(2*(sigma**2)))
-
-# Gaussian v2
+# Gaussian 
 dx = np.mean(np.diff(wavenumbers))
 fwhm = 7
 sigma = fwhm / 2.35 / dx
@@ -52,4 +44,5 @@ plt.xlabel('Wavenumbers')
 plt.ylabel('Intensity')
 plt.title('Gum')
 plt.legend()
+
 plt.show()
